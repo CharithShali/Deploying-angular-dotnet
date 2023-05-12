@@ -1,0 +1,30 @@
+<div class="searchFilter">
+<div class="search-container">
+  <span>
+    search:
+  </span>
+  <!-- <input type="text" [(ngModel)]="enteredSearchValue"  ><button></button> -->
+ <input type="text" [(ngModel)]="enteredSearchValue" #input><button   routerLink="/products/search" [queryParams]="{ name: input.value}"> Search </button>
+
+</div>
+
+<div class="filter">
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style" *ngFor="let cat of category">
+  <mat-button-toggle routerLink="/filter/{{cat.categoryId}}" value="bold">{{cat.category}}</mat-button-toggle>
+
+</mat-button-toggle-group>
+</div>
+</div>
+
+<div class="border p-5">
+  <div class="grid-view"  >
+      <div class="row g-5">
+        <div class="col-3" *ngFor="let product of products"  >
+
+            <app-product  [product]="product" [user]="user" [keyword]="enteredSearchValue" ></app-product>
+        </div>
+
+      </div>
+  </div>
+
+</div>

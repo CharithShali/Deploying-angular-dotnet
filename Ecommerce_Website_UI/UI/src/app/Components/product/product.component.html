@@ -1,0 +1,135 @@
+<div class="search" >
+<div class="grid-view" *ngIf="role ==='customer'|| !fullName">
+  <div class="card text-center">
+    <div
+      class="overflow-hidden d-flex justify-content-center align-items-center"
+    >
+      <img
+        src="../../../assets/images/{{ product.imageName }}"
+routerLink="/product/{{ product.productId }}"
+        alt=""
+        class="card-img-top"
+        OpenProductDetails
+      />
+    </div>
+
+    <div class="card-body">
+      <h3 class="card-title title">{{ product.title }}</h3>
+      <h4 class="card-subtitle my-2 text-primary">
+        {{ product.quantity }} products are available.
+      </h4>
+    </div>
+
+    <div class="card-body">
+      <h1 class="card-header fw-bold fs-5 text-success">
+        ${{ product.price }}
+      </h1>
+    </div>
+    <div class="card-body">
+      <div class="quantity"  *ngIf="product.quantity">
+        <button (click)="minus()" class="btn btn-outline-success">-</button>
+        <input
+          disabled
+          ng-model="item.Quantity"
+          type="number"
+          max="{{ product.quantity }}"
+          name="Quantity"
+          value="{{ Quantity }}"
+        />
+        <button class="btn btn-outline-success" (click)="plus()">+</button>
+      </div>
+      <div class="quantity"  *ngIf="product.quantity == 0">
+        <button  class="btn btn-outline-danger" disabled>-</button>
+        <input
+          disabled
+          ng-model="item.Quantity"
+          type="number"
+          max="{{ product.quantity }}"
+          name="Quantity"
+          value="0"
+        />
+        <button class="btn btn-outline-danger" disabled >+</button>
+      </div>
+    </div>
+
+    <div class="card-footer d-grid gap-2" *ngIf="product.quantity !== 0">
+      <button
+        type="button"
+        class="btn btn-outline-success"
+        *ngIf="!fullName"
+        routerLink="/login"
+      >
+        Add to Cart
+      </button>
+      <button
+        type="button"
+        *ngIf="fullName"
+        (click)="addCart(product.productId, user.userId)"
+        class="btn btn-outline-success"
+      >
+        Add to Cart
+      </button>
+    </div>
+    <div class="card-footer d-grid gap-2" *ngIf="product.quantity === 0">
+      <button
+        type="button"
+        disabled
+        class="btn btn-outline-danger"
+        *ngIf="!fullName"
+        routerLink="/login"
+      >
+        Out of Stock!
+      </button>
+      <button
+        type="button"
+        disabled
+        *ngIf="fullName"
+        class="btn btn-outline-danger"
+      >
+      Out of Stock!
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<div class="grid-view" *ngIf="role === 'seller'">
+  <div class="card text-center">
+    <div
+      class="overflow-hidden d-flex justify-content-center align-items-center"
+    >
+      <img
+        src="../../../assets/images/{{ product.imageName }}"
+        routerLink="/product/{{ product.productId }}"
+        alt=""
+        class="card-img-top"
+        OpenProductDetails
+      />
+    </div>
+
+    <div class="card-body">
+      <h3 class="card-title title">{{ product.title }}</h3>
+      <h4 class="card-subtitle my-2 text-primary">
+        {{ product.quantity }} products are available.
+      </h4>
+    </div>
+
+    <div class="card-body">
+      <h1 class="card-header fw-bold fs-5 text-success">
+        ${{ product.price }}
+      </h1>
+    </div>
+    <div class="card-body">
+    </div>
+    <div class="card-footer d-grid gap-2">
+      <button routerLink="/product/edit/{{ product.productId }}"
+        type="button"
+        class="btn btn-outline-danger"
+      >
+        Edit
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+

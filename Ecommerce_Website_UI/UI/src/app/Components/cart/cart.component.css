@@ -1,0 +1,20 @@
+.basket {
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.mdc-data-table__table {
+  min-width: 70%;
+  margin-top: 20px;
+  float: left;
+}
+.my-container {
+  float: right;
+  width: 30%;
+}
+
+.w-50 {
+  min-width: 80%;
+}

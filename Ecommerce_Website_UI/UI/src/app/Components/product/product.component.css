@@ -1,0 +1,111 @@
+ #container { font-size: 0; }
+
+
+:host {
+  display: block;
+  overflow: hidden;
+  height: max-content;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 0.75rem rgba(0, 0, 0, 0.3);
+  transition: transform 200ms ease-in-out;
+  cursor: pointer;
+
+}
+
+:host:hover {
+  transform: scale(1.03);
+}
+
+img {
+  cursor: pointer;
+  transition: transform 100ms ease-in;
+  height: 160px;
+  width: 140px;
+  margin-top: 16px;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+.grid-view .description,
+.grid-view .title {
+  /* height: 30px; */
+overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 16px;
+}
+
+.list-view .title {
+  height: 50px;
+  overflow: hidden;
+}
+.list-view .description {
+  height: 75px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cart-item-view .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-body h3 {
+  margin: 0;
+}
+
+.card-body {
+  padding: 0 20px;
+
+}
+.card-title{
+  font-weight: bold;
+}
+icon-shape {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.icon-sm {
+  width: 2rem;
+  height: 2rem;
+
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+ input[type=number] {
+  -moz-appearance: textfield;
+}
+input {
+  width: 20%;
+  border-color: green;
+ border-width: 0.3px;
+ height: 30px;
+ border-radius: 5px;
+ align-items: center;
+ vertical-align: middle;
+ text-align: center;
+
+}
+.quantity{
+  margin-bottom: 10px;
+}
+.btn{
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 30px;
+  align-items: center;
+  padding-top: 0;
+}
+
+

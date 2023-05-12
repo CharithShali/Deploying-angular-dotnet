@@ -1,0 +1,17 @@
+<div class="filter">
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" *ngFor="let cat of category">
+      <mat-button-toggle value="bold" routerLink="/filter/{{cat.categoryId}}">{{cat.category}}</mat-button-toggle>
+
+    </mat-button-toggle-group>
+    </div>
+
+    <div class="border p-5">
+      <div class="grid-view"  >
+          <div class="row g-5">
+              <div class="col-3" *ngFor="let product of products">
+                <app-product  [product]="product" [user]="user" ></app-product>
+              </div>
+          </div>
+      </div>
+
+    </div>

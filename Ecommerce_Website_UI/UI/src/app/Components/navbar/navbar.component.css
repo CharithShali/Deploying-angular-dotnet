@@ -1,0 +1,74 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.list-item{
+  padding: 10px 10px 10px 10px;
+  margin-left: 10px;
+  border-color: white;
+  color: white;
+}
+.navbar button{
+
+  margin-left: 10px;
+  border-color: white;
+  color: white;
+  border-radius: 5px;
+}
+.mat-toolbar.mat-primary {
+  background: #203a57;
+  color: #fff;
+}
+.navbar{
+  padding: 10px 10px 10px 10px;
+  background: #203a57;
+}
+.user{
+  border-color: #203a57;
+}
+
+/* :host {
+  display: block;
+  height: 4rem;
+  width: 100%;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 20;
+} */
+
+
+.demo-section + .demo-section {
+  margin-top: 16px;
+}
+@media (max-width: 768px) {
+  .navbar{
+width: auto;
+  }
+  .navbar button{
+
+    margin-left: 0px;
+  border-color: white;
+  color: white;
+  border-radius: 5px;
+  font-size: 9px;
+
+  height: 40px;
+}
+
+}
+@media (max-width: 557px) {
+  .navbar{
+width: auto;
+  }
+  .navbar button{
+    display: none;
+    margin-left: 0px;
+  border-color: white;
+  color: white;
+  border-radius: 5px;
+  font-size: 9px;
+
+  height: 40px;
+}
+
+}

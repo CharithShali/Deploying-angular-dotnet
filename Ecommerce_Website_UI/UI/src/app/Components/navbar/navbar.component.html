@@ -1,0 +1,130 @@
+<div class="navbar">
+<mat-toolbar color="primary" *ngIf="fullName === undefined" >
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>TechZone</span>
+  <span class="example-spacer"></span>
+
+
+    <button mat-stroked-button="primary">Categories</button>
+    <button mat-stroked-button="primary" routerLink="/login">Login</button>
+    <button mat-stroked-button="primary" routerLink="/register">Register</button>
+
+</mat-toolbar>
+
+
+
+  <mat-toolbar color="primary" *ngIf="'fullName' && role=='customer'" >
+
+
+    <span>TechZone</span>
+    <span class="example-spacer"></span>
+
+      <button class="list-item" routerLink="/" mat-stroked-button color="primary">Home</button>
+      <button mat-stroked-button="primary">Categories</button>
+
+      <button mat-stroked-button="primary" matBadge="{{cart.length}}" matBadgeColor="warn" routerLink="/cart">Cart</button>
+      <button mat-raised-button color="accent"><mat-icon>person</mat-icon> {{fullName}}</button>
+      <button mat-stroked-button="primary" (click)="logOut()" routerLink="/register">LogOut!</button>
+
+  </mat-toolbar>
+
+  <mat-toolbar color="primary" *ngIf="'fullName' && role=='seller'">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>TechZone</span>
+    <span class="example-spacer"></span>
+
+      <button class="list-item" routerLink="/addproduct" mat-stroked-button color="primary">Add Product</button>
+      <button mat-stroked-button="primary" routerLink="/addcategory">Add Category</button>
+      <button mat-stroked-button="primary" routerLink="/order">Orders</button>
+      <button mat-raised-button color="accent"><mat-icon>person</mat-icon> {{fullName}}</button>
+      <button mat-stroked-button="primary" (click)="logOut()" routerLink="/register">LogOut!</button>
+
+  </mat-toolbar>
+  </div>
+
+
+<!--
+ <header class="w-100 h-100 bg-dark px-4 my-shadow d-flex justify-content-between align-items-center" *ngIf="fullName === undefined">
+  <div class="text-light fs-2 fw-bold fst-italic">
+      <span>TechZone</span>
+  </div>
+
+  <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group btn-group-lg me-3" role="group">
+          <button type="button" class="btn btn-outline-light" routerLink="/home">Home</button>
+          <div class="btn-group" role="group">
+              <button type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown">
+                  Categories
+              </button>
+              <ul class="dropdown-menu fs-5">
+                  <ng-container >
+                      <li class="text-center fw-bold">1
+                          <hr class="dropdown-divider">
+                        </li>
+                  </ng-container>
+              </ul>
+          </div>
+      </div>
+
+      <div class="btn-group btn-group-lg me-2" role="group">
+          <button type="button" class="btn btn-outline-light"
+          routerLink="/login"  >Login</button>
+          <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#generalmodal"
+                 >Register</button>
+
+      </div>
+  </div>
+</header>
+
+
+
+<header class="w-100 h-100 bg-dark px-4 my-shadow d-flex justify-content-between align-items-center" *ngIf="fullName">
+  <div class="text-light fs-2 fw-bold fst-italic">
+      <span>TechZone</span>
+  </div>
+
+  <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group btn-group-lg me-3" role="group">
+          <button type="button" class="btn btn-outline-light" routerLink="/home">Home</button>
+          <div class="btn-group" role="group">
+              <button type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown">
+                  Categories
+              </button>
+              <ul class="dropdown-menu fs-5">
+                  <ng-container >
+                      <li class="text-center fw-bold">1
+                          <hr class="dropdown-divider">
+                        </li>
+                  </ng-container>
+              </ul>
+          </div>
+      </div>
+
+
+      <div class="btn-group btn-group-lg me-2" role="group">
+        <button type="button" class="btn btn-outline-light"
+        routerLink="/cart"  >{{email}}</button>
+          <button type="button" class="btn btn-outline-light" disabled
+          routerLink="/login"  >{{fullName}}</button>
+          <button type="button" class="btn btn-outline-light" (click)="logOut()"
+                 >LogOut!</button>
+
+      </div>
+  </div>
+</header>
+
+
+
+
+ -->
+
+
+
+
+
+
+

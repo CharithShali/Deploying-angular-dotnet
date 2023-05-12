@@ -1,0 +1,66 @@
+.outer {
+  height: 100vh;
+border-color: #13293D;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+.panel-heading {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 100px;
+}
+#forget {
+  min-width: 100px;
+  margin-left: auto;
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: none;
+}
+.form-inline label {
+  padding-left: 10px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.btn {
+  margin-top: 20px;
+  background: #13293D;
+  color: white;
+  border-radius: 5px;
+}
+.panel{
+  min-height: 300px;
+  box-shadow: 20px 20px 80px rgb(218, 218,218);
+  border-radius: 12px;
+  margin-top: 100px;
+}
+
+
+input{
+width: 100%;
+height: 50px;
+justify-content: center;
+  align-items: center;
+  display: flex;
+
+}
+.input-field{
+  border-radius: 20px;
+}
+.input-field-error{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+border:1px solid red;
+}
+
+h3{
+  font-size: 34px;
+  padding: 5px;
+  color: #13293D;
+}

@@ -1,0 +1,179 @@
+<div *ngIf="dataSource.data.length == 0">
+  No data
+  <section>
+    <div class="example-label">Mini FAB</div>
+    <div class="example-button-row">
+      <div class="example-flex-container">
+        <div class="example-button-container">
+          <button
+            mat-mini-fab
+            color="primary"
+            aria-label="Example icon button with a menu icon"
+          >
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+        <div class="example-button-container">
+          <button
+            mat-mini-fab
+            color="accent"
+            aria-label="Example icon button with a plus one icon"
+          >
+            <mat-icon>plus_one</mat-icon>
+          </button>
+        </div>
+        <div class="example-button-container">
+          <button
+            mat-mini-fab
+            color="warn"
+            aria-label="Example icon button with a filter list icon"
+          >
+            <mat-icon>filter_list</mat-icon>
+          </button>
+        </div>
+        <div class="example-button-container">
+          <button
+            mat-mini-fab
+            disabled
+            aria-label="Example icon button with a home icon"
+          >
+            <mat-icon>home</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+      </section>
+        </div>
+
+     <div class="basket" *ngIf="dataSource.data.length !== 0" >
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="image">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          sortActionDescription="Sort by number"
+        >
+          Product
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <img
+            style="height: 60px; margin: 10px"
+            src="../../../assets/images/{{ element.productimage }}"
+          />
+        </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          sortActionDescription="Sort by name"
+        >
+          Name
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.productname }}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="quantity">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          sortActionDescription="Sort by weight"
+        >
+          Quantity
+        </th>
+        <div class="quantity">
+          <td mat-cell *matCellDef="let element">{{ element.cartquantity }}</td>
+        </div>
+      </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="price">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          sortActionDescription="Sort by weight"
+        >
+          Price
+        </th>
+        <td mat-cell *matCellDef="let element">${{ element.productprice }}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="amount">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          sortActionDescription="Sort by symbol"
+        >
+          Amount
+        </th>
+        <td mat-cell *matCellDef="let element">${{ element.amount }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          sortActionDescription="Sort by symbol"
+        >
+          Delete
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <button
+            (click)="onDelete(element.cartitemid)"
+            style="margin: 10px"
+            mat-raised-button
+            color="warn"
+          >
+            delete
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <div class="my-container">
+      <!-- <h3 class="w-25 border text-center py-2 my-rounded-corner">Current Cart</h3> -->
+      <div class="mt-5">
+        <table class="table w-50 mx-auto table-bordered table-hover my-shadow">
+          <tbody>
+            <tr>
+              <td>Total Items</td>
+              <td class="fs-5 fw-bold">6</td>
+            </tr>
+            <tr>
+              <td>Total Price</td>
+              <td class="fs-5 fw-bold text-danger">7</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-grid w-50 mx-auto mb-3">
+          <button (click)="Order()"
+            class="btn btn-outline-success fs-4"
+            type="button"
+            routerLink="/orders"
+          >
+
+
+            Order
+          </button>
+
+      </div>
+      </div>
+  <mat-spinner *ngIf="showProgressBar" style="margin: 0 auto;color: black;"></mat-spinner>
+
+    </div>
+
+  </div>
+
